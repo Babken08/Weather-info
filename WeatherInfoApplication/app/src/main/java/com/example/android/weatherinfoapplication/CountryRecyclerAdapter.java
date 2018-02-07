@@ -82,6 +82,11 @@ public class CountryRecyclerAdapter extends RecyclerView.Adapter<CountryRecycler
             @Override
             public void onClick(View v) {
 
+                if(NetworkUtil.getConnectivityStatus(context) == 0){
+                    Toast.makeText(context, "Enable your internet please", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if (holder.informLayout.getVisibility() < 4) {
                     holder.informLayout.setVisibility(View.GONE);
                     item_position = -1;
@@ -90,11 +95,6 @@ public class CountryRecyclerAdapter extends RecyclerView.Adapter<CountryRecycler
                     holder.informLayout.setVisibility(View.VISIBLE);
                     getWeatherInfo(list.get(position).getCountry(), key, holder);
                     item_position = position;
-//                    holder.tvHumidity.setText(humidity);
-//                    holder.tvTemp.setText(temp);
-//                    holder.tvPressure.setText(pressure);
-//                    holder.tvSpeed.setText(speed);
-//                    holder.tvDescription.setText(description);
                 }
                 notifyDataSetChanged();
             }
