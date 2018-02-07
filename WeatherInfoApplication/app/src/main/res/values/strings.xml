@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WeatherInfoApplication</string>
+    <string name="armenia">ARMENIA</string>
+    <string name="Yerevan">Yerevan</string>
+    <string name="moscow">Moscow</string>
+    <string name="pariz">Paris</string>
+    <string name="newyork">New York</string>
+    <string name="london">London</string>
+</resources>
